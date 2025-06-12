@@ -107,9 +107,18 @@ footer a {
 
 .clickable:hover {
   color: #007B8F; /* Cambia el color al pasar el ratón */
-  text-decoration: underline; /* Opcional: subraya el texto */
+}
+.servicio a {
+  display: block; /* Hace que el enlace ocupe todo el contenedor */
+  text-decoration: none; /* Elimina el subrayado del texto */
+  color: inherit; /* Mantiene el color del texto */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
+.servicio a:hover {
+  transform: translateY(-5px); /* Mueve el div hacia arriba al pasar el ratón */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+}
 /* Estilos para el logo */
 .logo {
     display: flex;
