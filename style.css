@@ -90,3 +90,98 @@ footer a {
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   z-index: 100;
 }
+/* style.css */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #f5f9fc;
+    color: #333;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 999;
+  }
+  
+  .header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header .logo img {
+    height: 40px;
+  }
+  
+  .social-icons a {
+    color: #333;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  .hero {
+    padding: 120px 20px 60px;
+    text-align: center;
+    background: linear-gradient(to right, #00bcd4, #2196f3);
+    color: white;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero .btn {
+    background: white;
+    color: #2196f3;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .servicios {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .servicios h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .servicio-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .servicio {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  .servicio img {
+    width: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background: #e0e0e0;
+  }
+  
