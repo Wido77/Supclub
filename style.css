@@ -6,7 +6,7 @@ body {
   color: #222;
 }
 header {
-  background-image: url('https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__large/public/media/2020/07/14/paddel_surf_competicion.jpg.webp');
+  background-image: url('assets/fondo1.png');
   background-size: cover;
   background-position: center;
   height: 100vh;
