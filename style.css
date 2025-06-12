@@ -77,43 +77,6 @@ footer a {
   text-decoration: none;
   font-weight: bold;
 }
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  border-radius: 50%;
-  padding: 14px;
-  font-size: 24px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  z-index: 100;
-}
-.whatsapp:hover {
-  background-color: #128C7E;
-  transform: scale(1.1);
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.instagram {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background-color: #f5a4a4;
-    color: white;
-    border-radius: 50%;
-    padding: 14px;
-    font-size: 24px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    z-index: 100;
-  }
-  .instagram:hover {
-    background-color: #a31674;
-    transform: scale(1.1);
-    transition: background-color 0.3s, transform 0.3s;
-  }
 
 /* Estilos para el logo */
 .logo {
@@ -131,25 +94,7 @@ footer a {
   }
   
   /* Estilos para los íconos sociales */
-  .social-icons {
-    display: flex;
-    gap: 15px;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-  
-  .social-icons a {
-    color: rgb(0, 0, 0);
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: transform 0.3s;
-  }
-  
-  .social-icons a:hover {
-    transform: scale(1.2);
-  }
+
 
   .social-icons-vertical {
     position: fixed;
@@ -157,7 +102,7 @@ footer a {
     right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     z-index: 1000;
   }
   
@@ -167,7 +112,7 @@ footer a {
     text-align: center;
     background-color: #007B8F;
     border-radius: 50%;
-    padding: 10px;
+    padding: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, background-color 0.3s;
   }
