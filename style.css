@@ -150,3 +150,52 @@ footer a {
   .social-icons a:hover {
     transform: scale(1.2);
   }
+
+  .social-icons-vertical {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+  
+  .social-icons-vertical a {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    background-color: #007B8F;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .social-icons-vertical a:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-icons-vertical .whatsapp {
+    background-color: #25D366;
+  }
+  
+  .social-icons-vertical .whatsapp:hover {
+    background-color: #128C7E;
+  }
+  
+  .social-icons-vertical .instagram {
+    background-color: #E1306C;
+  }
+  
+  .social-icons-vertical .instagram:hover {
+    background-color: #C13584;
+  }
+  
+  .social-icons-vertical .facebook {
+    background-color: #3b5998;
+  }
+  
+  .social-icons-vertical .facebook:hover {
+    background-color: #2d4373;
+  }
