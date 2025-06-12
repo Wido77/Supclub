@@ -6,7 +6,7 @@ body {
   color: #222;
 }
 header {
-  background-image: url('assets/fondo1.gif');
+  background-image: url('assets/fondo.gif');
   background-size: cover;
   background-position: center;
   height: 100vh;
