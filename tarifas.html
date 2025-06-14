@@ -1,20 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tarifas SUP Club</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Aquí enlazas tu CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!--Header igual que en index-->
+  <header class="header">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="assets/video.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+    <div class="logo">
+      <a href="index.html">
+       <img src="assets/logo.jpg" alt="Logo SUP Club" />
+      </a>
+      <span>SUP Club</span>
+    </div>
+    <div>
+      <h1>SUP Club Zaragoza</h1>
+      <p>Clases y aventuras de Paddle Surf para todos los niveles</p>
+    </div>
+  </header>
 
-
-
-<section class="section">
+  <!-- Sección de tarifas -->
+  <section class="section">
     <h2>Tarifas</h2>
+    <button onclick="history.back()" class="btn-volver">← Volver</button>
+    <p>
+      Aquí encontrarás todas nuestras tarifas para clases, alquiler y servicios. 
+      Si tienes alguna duda, no dudes en <a href="index.html#contacto">contactarnos</a>.
+
+  <!-- Guía de clases recomendadas -->
+  <div class="guia-clases" style="margin-bottom:2rem;">
+    <h3>¿Cuántas clases necesito para iniciarme en paddlesurf?</h3>
+    <p>
+      La cantidad de clases necesarias puede variar un poco según tu ritmo, habilidades previas y tu objetivo (probar, aprender o practicar regularmente). Aquí te dejamos una guía detallada para ayudarte a decidir:
+    </p>
+    <ul>
+      <li>
+        <strong>✅ 1 clase – Primer contacto con el SUP</strong><br>
+        Ideal si quieres simplemente probar la experiencia, divertirte y descubrir cómo es remar de pie en una tabla.<br>
+        <em>En esta sesión (de 1h30–2h) aprenderás:</em>
+        <ul>
+          <li>Cómo subirte y mantener el equilibrio en una tabla de SUP estable.</li>
+          <li>Posición de los pies y postura corporal correcta.</li>
+          <li>Técnicas básicas de remada: remada hacia adelante, cambio de lado y frenado.</li>
+          <li>Normas básicas de seguridad, prioridad y entorno natural.</li>
+          <li>Cómo volver a subir si caes (reingreso desde el agua).</li>
+        </ul>
+        <strong>🎯 Recomendado si:</strong>
+        <ul>
+          <li>Solo quieres vivir la experiencia una vez.</li>
+          <li>Buscas una actividad puntual o en grupo sin compromiso a largo plazo.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>✅ 2 a 4 clases – Aprender a remar con autonomía</strong><br>
+        Este es el rango ideal si quieres aprender a remar con seguridad por tu cuenta y empezar a hacer salidas regulares.<br>
+        <em>Después de la primera clase, en las siguientes se trabaja:</em>
+        <ul>
+          <li>Mejora del equilibrio dinámico (remo en movimiento, giros, cambios de ritmo).</li>
+          <li>Dominio del remo básico y avanzado: remada efectiva, técnica del torso, giros tipo “pivot turn” y “sweep stroke”.</li>
+          <li>Control de la tabla en corriente suave, viento o agua ligeramente movida.</li>
+          <li>Maniobras básicas: frenar, girar, mantener dirección.</li>
+          <li>Práctica de caídas controladas y auto-rescate.</li>
+        </ul>
+        <strong>🎯 Recomendado si:</strong>
+        <ul>
+          <li>Quieres practicar de forma autónoma y segura.</li>
+          <li>Te interesa unirte a salidas en grupo sin depender del monitor.</li>
+          <li>Tienes interés en mejorar físicamente o aprender la técnica con detalle.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>✅ 5 o más clases – Técnica, fluidez y autonomía total</strong><br>
+        Este número de sesiones permite adquirir una técnica sólida y eficiencia real al remar. No solo aprendes a mantenerte de pie: aprendes a remar bien.<br>
+        <em>Trabajamos:</em>
+        <ul>
+          <li>Técnica avanzada de remada: rotación de tronco, palada profunda y controlada, eficiencia energética.</li>
+          <li>Maniobras avanzadas: giros en movimiento, cambios de pie, pivot turn desde tail.</li>
+          <li>Adaptación a condiciones reales: viento, corriente, remadas largas o aguas abiertas.</li>
+          <li>Introducción a modalidades específicas si te interesa: SUP touring, travesía, river SUP o incluso iniciación al race.</li>
+        </ul>
+        <strong>🎯 Recomendado si:</strong>
+        <ul>
+          <li>Quieres remar de forma habitual o unirte a un club.</li>
+          <li>Estás interesado/a en mejorar físicamente o practicar como deporte regular.</li>
+          <li>Buscas una preparación más completa para hacer salidas en entornos variados (río, embalse, mar).</li>
+        </ul>
+      </li>
+    </ul>
+    <div style="margin-top:1.5rem;">
+      <strong>💬 En resumen:</strong>
+      <table style="width:100%;max-width:500px;margin:auto;text-align:center;">
+        <thead>
+          <tr>
+            <th>Objetivo</th>
+            <th>Nº de clases</th>
+            <th>Qué consigues</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Probar la experiencia</td>
+            <td>1 clase</td>
+            <td>Primer contacto, diversión</td>
+          </tr>
+          <tr>
+            <td>Remar con seguridad</td>
+            <td>2–4 clases</td>
+            <td>Autonomía básica y control</td>
+          </tr>
+          <tr>
+            <td>Fluidez y técnica</td>
+            <td>5+ clases</td>
+            <td>Remar con eficiencia y en grupo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Aquí seguiría la tabla de precios -->
     <div style="overflow-x:auto;">
       <table class="tarifas-table">
         <thead>
@@ -37,87 +148,60 @@
         </tbody>
       </table>
     </div>
-  </section>
-
-  <section class="py-12 bg-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-cyan-800 mb-6">
-        Tarifas Clases Paddle Surf<br>SUP Club Zaragoza
-      </h2>
-  
-      <div class="overflow-x-auto rounded-lg shadow">
-        <table class="min-w-full text-center border border-gray-300">
-          <thead class="bg-cyan-100 text-cyan-900 font-semibold">
-            <tr>
-              <th class="px-4 py-3 border">Modalidad</th>
-              <th class="px-4 py-3 border">Precio Total</th>
-              <th class="px-4 py-3 border">Precio por Clase</th>
-              <th class="px-4 py-3 border">Ideal para</th>
-            </tr>
-          </thead>
-          <tbody class="text-gray-800">
-            <tr>
-              <td class="px-4 py-3 border">Clase puntual</td>
-              <td class="px-4 py-3 border">40€</td>
-              <td class="px-4 py-3 border">40€</td>
-              <td class="px-4 py-3 border">Probar la actividad</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="px-4 py-3 border">Bono 4 clases (válidas 2 meses)</td>
-              <td class="px-4 py-3 border">120€</td>
-              <td class="px-4 py-3 border">30€</td>
-              <td class="px-4 py-3 border">Progresar a buen ritmo</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 border">Bono 8 clases (válidas 3 meses)</td>
-              <td class="px-4 py-3 border">200€</td>
-              <td class="px-4 py-3 border">25€</td>
-              <td class="px-4 py-3 border">Avanzar rápido y con regularidad</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="px-4 py-3 border">Bono 10 clases (válidas 4 meses)</td>
-              <td class="px-4 py-3 border">250€</td>
-              <td class="px-4 py-3 border">25€</td>
-              <td class="px-4 py-3 border">Flexibilidad y continuidad</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 border">Clase en pareja (2 personas)</td>
-              <td class="px-4 py-3 border">70 € (35 €/pers)</td>
-              <td class="px-4 py-3 border">35€</td>
-              <td class="px-4 py-3 border">Con tu pareja o amigo/a</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="px-4 py-3 border">Clase en grupo (3 personas)</td>
-              <td class="px-4 py-3 border">90 € (30 €/pers)</td>
-              <td class="px-4 py-3 border">30€</td>
-              <td class="px-4 py-3 border">Grupos reducidos de confianza</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 border">Clase en grupo (4 personas)</td>
-              <td class="px-4 py-3 border">110 € (27,5 €/pers)</td>
-              <td class="px-4 py-3 border">27,50€</td>
-              <td class="px-4 py-3 border">Ideal para grupos de amigos</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="px-4 py-3 border">Alquiler libre (sin monitor, 1 día)</td>
-              <td class="px-4 py-3 border">20€</td>
-              <td class="px-4 py-3 border">—</td>
-              <td class="px-4 py-3 border">Con experiencia previa</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-  
-      <div class="mt-8 bg-cyan-50 border-l-4 border-cyan-400 p-6 rounded">
-        <h3 class="text-lg font-semibold text-cyan-800 mb-2">Todos los bonos incluyen:</h3>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>Material completo (tabla hinchable, remo, leash, chaleco)</li>
-          <li>Seguro de Responsabilidad Civil</li>
-          <li>Pack de fotos y vídeos con dron para que compartas tus progresos</li>
-        </ul>
-      </div>
+    <div class="mt-8 bg-cyan-50 border-l-4 border-cyan-400 p-6 rounded">
+      <h3 class="text-lg font-semibold text-cyan-800 mb-2">Todos los bonos incluyen:</h3>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Material completo (tabla hinchable, remo, leash, chaleco)</li>
+        <li>Seguro de Responsabilidad Civil</li>
+        <li>Pack de fotos y vídeos con dron para que compartas tus progresos</li>
+      </ul>
     </div>
   </section>
 
+
+    <!-- Tarjetas de tarifas estilo servicios -->
+    <div class="tarifas-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem;">
+      <div class="tarifa-card servicio">
+        <h3>Clase puntual</h3>
+        <p><strong>40€</strong> <br>Probar la actividad</p>
+      </div>
+      <div class="tarifa-card servicio">
+        <h3>Bono 4 clases (2 meses)</h3>
+        <p><strong>120€</strong> (30€/clase)<br>Progresar a buen ritmo</p>
+      </div>
+      <div class="tarifa-card servicio">
+        <h3>Bono 8 clases (3 meses)</h3>
+        <p><strong>200€</strong> (25€/clase)<br>Avanzar rápido y con regularidad</p>
+      </div>
+      <div class="tarifa-card servicio">
+        <h3>Bono 10 clases (4 meses)</h3>
+        <p><strong>250€</strong> (25€/clase)<br>Flexibilidad y continuidad</p>
+      </div>
+      <div class="tarifa-card servicio">
+        <h3>Clase en pareja</h3>
+        <p><strong>70€</strong> (35€/persona)<br>Con tu pareja o amigo/a</p>
+      </div>
+      <div class="tarifa-card servicio">
+        <h3>Clase en grupo (3 personas)</h3>
+        <p><strong>90€</strong> (30€/persona)<br>Grupos reducidos</p>
+      </div>
+      <div class="tarifa-card servicio">
+        <h3>Clase en grupo (4 personas)</h3>
+        <p><strong>110€</strong> (27,5€/persona)<br>Grupos de amigos</p>
+      </div>
+      <div class="tarifa-card servicio">
+        <h3>Alquiler libre (1 día)</h3>
+        <p><strong>20€</strong><br>Practicar por libre</p>
+      </div>
+    </div>
+
+  <!-- Footer igual que en index -->
+  <footer>
+    <p>
+      · Whatsapp: <a href="https://wa.me/34621393873" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      · Instagram: <a href="https://instagram.com/supclubzgz" target="_blank"><i class="fab fa-instagram"></i></a>
+      · Facebook: <a href="https://facebook.com/supclubzgz" target="_blank"><i class="fab fa-facebook"></i></a>
+    </p>
+  </footer>
 </body>
 </html>
