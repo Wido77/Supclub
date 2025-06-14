@@ -170,3 +170,15 @@ footer a {
     background-color: #128C7E;
   }
   
+/*Estilos para el calendario*/
+.calendario-table th, .calendario-table td {
+  border-bottom: 1px solid #e0f7fa;
+  text-align: center;
+}
+.calendario-table th {
+  background: #0077b6;
+  color: #fff;
+}
+.calendario-table tr:last-child td {
+  border-bottom: none;
+}
