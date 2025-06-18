@@ -48,8 +48,6 @@ header p {
   max-width: 1200px;
   margin:auto;
   margin-top:-40px;
-  
-  
 }
 .section h2 {
   text-align: center;
@@ -116,7 +114,7 @@ footer a {
 }
 
 .servicio a:hover {
-  transform: translateY(-20px); /* Mueve el div hacia arriba al pasar el ratón */
+  transform: translateY(-60px); /* Mueve el div hacia arriba al pasar el ratón */
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
 }
 /* Estilos para el logo */
@@ -135,8 +133,6 @@ footer a {
   }
   
   /* Estilos para los íconos sociales */
-
-
   .social-icons-vertical {
     position: fixed;
     bottom: 20px;
@@ -146,7 +142,6 @@ footer a {
     gap: 15px;
     z-index: 1000;
   }
-  
   .social-icons-vertical a {
     color: white;
     font-size: 24px;
@@ -182,3 +177,19 @@ footer a {
 .calendario-table tr:last-child td {
   border-bottom: none;
 }
+
+/*Estilos para las tarjetas de las clases*/
+.tarifas-cards{
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:2rem;
+  margin-top: 3rem;
+}
+  @media(max-width: 768px) {
+  .tarifas-cards {
+    grid-template-columns: repeat(2, 1fr); /*Solo 2 columnas en movil*/
+
+  }
+  }
+
+
