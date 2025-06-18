@@ -188,6 +188,8 @@ footer a {
   @media(max-width: 768px) {
   .tarifas-cards {
     grid-template-columns: repeat(2, 1fr); /*Solo 2 columnas en movil*/
+    padding-left: 1rem;
+    padding-right: 1rem;  
 
   }
   }
