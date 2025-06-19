@@ -101,7 +101,7 @@ header p {
 }
 
 .servicio a:hover {
-  transform: translateY(-60px);
+  /*transform: translateY(-60px);*/
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -171,9 +171,9 @@ footer a {
 
 /* En PC: hover para ratón */
 .clickable-index:hover {
-  transform: translateY(-10px);
-  opacity: 0.8;
-  background-color: #007B8F;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+  background-color: #005fa3;
+  
 }
 
 /* En móvil: efecto al pulsar */
