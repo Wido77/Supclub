@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario SUP 2025</title>
+    <!-- Enlaces a recursos externos: fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabecera con video de fondo y logo -->
+    <header class="header">
+        <!-- Video de fondo autoreproducible -->
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="assets/video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <!-- Logo y nombre del club -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.jpg" alt="Logo SUP Club" />
+            </a>
+            <span>SUP Club</span>
+        </div>
+        <!-- Título principal y descripción -->
+        <div>
+            <h1>SUP Club Zaragoza</h1>
+            <p>Clases y aventuras de Paddle Surf para todos los niveles</p>
+        </div>
+    </header>
+
+    <!-- Sección principal del calendario -->
+    <section class="section">
+        <h2>Calendario de Clases 2025</h2>
+        <!-- Botón para volver a la página anterior -->
+        <button onclick="history.back()" class="btn-volver">← Volver</button>
+        <p>
+            Aquí encontrarás un calendario con los días y horarios disponibles para tus clases de Paddle Surf. 
+            Si tienes alguna duda, no dudes en <a href="index.html#contacto">contactarnos</a>.
+        </p>
+        <div class="tarifas-cards">
+            <!-- Contenedor donde se generará el calendario dinámicamente -->
+            <div id="calendar-container"></div>
+
+            <script>
+                // Configuración inicial del calendario
+                const year = 2025;
+                const startMonth = 5; // Junio (enero = 0)
+                const numMonths = 4; // Mostrar 4 meses: junio, julio, agosto, septiembre
+
+                // Array con nombres de los meses en español
+                const monthNames = [
+                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+                ];
+
+                // Obtener el contenedor del calendario
+                const container = document.getElementById("calendar-container");
+
+                // Bucle para generar los calendarios de cada mes
+                for (let m = 0; m < numMonths; m++) {
+                    // Cálculo del mes y año actuales
+                    const currentMonth = (startMonth + m) % 12;
+                    const currentYear = year + Math.floor((startMonth + m) / 12);
+
+                    // Crear y configurar el contenedor del mes
+                    const monthDiv = document.createElement("div");
+                    monthDiv.classList.add("calendar");
+
+                    // Crear el encabezado del mes
+                    const header = document.createElement("div");
+                    header.classList.add("calendar-header");
+                    header.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+                    monthDiv.appendChild(header);
+
+                    // Crear los días de la semana
+                    const daysOfWeek = document.createElement("div");
+                    daysOfWeek.classList.add("calendar-days");
+                    daysOfWeek.innerHTML = `
+                        <div>L</div><div>M</div><div>X</div>
+                        <div>J</div><div>V</div><div>S</div><div>D</div>
+                    `;
+                    monthDiv.appendChild(daysOfWeek);
+
+                    // Crear la cuadrícula de días
+                    const datesGrid = document.createElement("div");
+                    datesGrid.classList.add("calendar-dates");
+
+                    // Calcular el primer día del mes
+                    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+                    // Calcular el número total de días en el mes
+                    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+                    // Ajustar las celdas vacías para el primer día
+                    let emptyCells = firstDay === 0 ? 6 : firstDay - 1;
+
+                    // Añadir celdas vacías
+                    for (let i = 0; i < emptyCells; i++) {
+                        datesGrid.appendChild(document.createElement("div"));
+                    }
+
+                    // Añadir los días del mes
+                    for (let day = 1; day <= daysInMonth; day++) {
+                        const dayDiv = document.createElement("div");
+                        dayDiv.textContent = day;
+                        datesGrid.appendChild(dayDiv);
+                    }
+
+                    // Añadir la cuadrícula al contenedor del mes
+                    monthDiv.appendChild(datesGrid);
+                    container.appendChild(monthDiv);
+                }
+            </script>
+            </section>
+
+            <!-- Sección de botón de WhatsApp para reservas -->
+            <section class="section">
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://wa.me/34621393873" class="boton-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Reserva tu plaza
+                    </a>
+                </div>
+            </section>
+
+
+  <div class="social-icons-vertical">
+    <a class="whatsapp" href="https://wa.me/34621393873" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+</body>
+
+  <footer>
+    <p>SUP Club Zaragoza</p>
+    <p> · Whatsapp: <a href="https://wa.me/34621393873" target="_blank"><i class="fab fa-whatsapp"></i></a> </p>
+    <p> · Instagram: <a href="https://instagram.com/supclubzgz" target="_blank"><i class="fab fa-instagram"></i></a> </p>
+    <p> · Facebook: <a href="https://facebook.com/supclubzgz" target="_blank"><i class="fab fa-facebook"></i></a></p>
+    
+  </footer>
+</html>
+  
