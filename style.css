@@ -321,3 +321,77 @@ footer a {
 .calendar-dates div:not(.empty):hover {
     transform: scale(1.1);
 }
+.alquiler h3 {
+  margin-top: 2rem;
+  color: #007B8F;
+  font-size: 1.5rem;
+}
+
+.list-check, .list-bullet {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.list-check li::before {
+  content: '✔️ ';
+  margin-right: 8px;
+  color: #007B8F;
+}
+
+.list-bullet li {
+  margin-bottom: 0.5rem;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #007B8F;
+  margin: 1.5rem 0;
+}
+
+.whatsapp-link {
+  color: #25D366;
+  font-weight: bold;
+}
+.whatsapp-link:hover {
+  color: #128C7E;
+}
+.alquiler-box {
+  background: white;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+
+}
+
+.alquiler-box h3 {
+  margin-top: 0rem ;
+  margin-bottom: 0rem;
+}
+
+.tarifas-section h2 {
+  color: #007B8F;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.tarifas-section h3 {
+  color: #007B8F;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #005fa3;
+}
