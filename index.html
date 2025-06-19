@@ -79,6 +79,13 @@
   <div class="social-icons-vertical">
     <a class="whatsapp" href="https://wa.me/34621393873" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
-
+<!--Pequeño script para evitar que el foco quede en un elemento al cargar la página, es decir, para que los botones se reinicien en movil-->
+<script>
+  window.addEventListener('pageshow', () => {
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
+  });
+</script>
 </body>
 </html>
