@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - SUP Club</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-panel {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .admin-section {
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .events-list {
+            margin-top: 20px;
+        }
+
+        .event-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-panel">
+        <h1>Panel de Administración</h1>
+        
+        <!-- Login Section -->
+        <div id="loginSection">
+            <h2>Iniciar Sesión</h2>
+            <div class="form-group">
+                <input type="password" id="adminPassword" placeholder="Contraseña">
+                <button onclick="login()">Entrar</button>
+            </div>
+        </div>
+
+        <!-- Admin Content (hidden by default) -->
+        <div id="adminContent" style="display: none;">
+            <!-- Añadir Clase Especial -->
+            <div class="admin-section">
+                <h2>Añadir Clase</h2>
+                <div class="form-group">
+                    <input type="date" id="classDate">
+                    <input type="time" id="classTime">
+                    <input type="text" id="classType" placeholder="Tipo de clase">
+                    <button onclick="addSpecialClass()">Añadir Clase</button>
+                </div>
+            </div>
+
+            <!-- Añadir Período Bloqueado -->
+            <div class="admin-section">
+                <h2>Añadir Período Bloqueado</h2>
+                <div class="form-group">
+                    <input type="date" id="blockStart">
+                    <input type="date" id="blockEnd">
+                    <input type="text" id="blockReason" placeholder="Razón">
+                    <button onclick="addBlockedPeriod()">Añadir Bloqueo</button>
+                </div>
+            </div>
+
+            <!-- Lista de Eventos -->
+            <div class="admin-section">
+                <h2>Eventos Programados</h2>
+                <div id="eventsList" class="events-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = '1234'; // Cambia esto por una contraseña segura
+        let scheduleData = {
+            specialClasses: [],
+            blockedPeriods: []
+        };
+
+        // Login function
+        function login() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('adminContent').style.display = 'block';
+                loadScheduleData();
+            } else {
+                alert('Contraseña incorrecta');
+            }
+        }
+
+        // Load data from localStorage
+        function loadScheduleData() {
+            const savedData = localStorage.getItem('scheduleData');
+            if (savedData) {
+                scheduleData = JSON.parse(savedData);
+                updateEventsList();
+            }
+        }
+
+        // Save data to localStorage
+        function saveScheduleData() {
+            localStorage.setItem('scheduleData', JSON.stringify(scheduleData));
+            updateEventsList();
+        }
+
+        // Add special class
+        function addSpecialClass() {
+            const date = document.getElementById('classDate').value;
+            const time = document.getElementById('classTime').value;
+            const type = document.getElementById('classType').value;
+
+            if (!date || !time || !type) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+
+            scheduleData.specialClasses.push({ date, time, type });
+            saveScheduleData();
+        }
+
+        // Add blocked period
+        function addBlockedPeriod() {
+            const start = document.getElementById('blockStart').value;
+            const end = document.getElementById('blockEnd').value;
+            const reason = document.getElementById('blockReason').value;
+
+            if (!start || !end || !reason) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+
+            scheduleData.blockedPeriods.push({ start, end, reason });
+            saveScheduleData();
+        }
+
+        // Update events list
+        function updateEventsList() {
+            const list = document.getElementById('eventsList');
+            list.innerHTML = '';
+
+            // Show special classes
+            scheduleData.specialClasses.forEach((cls, index) => {
+                const div = document.createElement('div');
+                div.className = 'event-item';
+                div.innerHTML = `
+                    <span>Clase: ${cls.date} ${cls.time} - ${cls.type}</span>
+                    <button class="delete-btn" onclick="deleteSpecialClass(${index})">Eliminar</button>
+                `;
+                list.appendChild(div);
+            });
+
+            // Show blocked periods
+            scheduleData.blockedPeriods.forEach((period, index) => {
+                const div = document.createElement('div');
+                div.className = 'event-item';
+                div.innerHTML = `
+                    <span>Bloqueado: ${period.start} - ${period.end} (${period.reason})</span>
+                    <button class="delete-btn" onclick="deleteBlockedPeriod(${index})">Eliminar</button>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        // Delete functions
+        function deleteSpecialClass(index) {
+            scheduleData.specialClasses.splice(index, 1);
+            saveScheduleData();
+        }
+
+        function deleteBlockedPeriod(index) {
+            scheduleData.blockedPeriods.splice(index, 1);
+            saveScheduleData();
+        }
+    </script>
+</body>
+</html>
