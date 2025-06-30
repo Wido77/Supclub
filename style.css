@@ -162,32 +162,44 @@ footer a {
 
 .clickable-index {
   display: inline-block;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 5px;
+  padding: 12px 28px;
+  color: #fff;
+  background: white;
+  border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.08);
+  transition: 
+    background 0.3s cubic-bezier(.4,0,.2,1),
+    transform 0.2s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.3s cubic-bezier(.4,0,.2,1),
+    color 0.2s;
+  cursor: pointer;
+  border: solid 2px #007B8F;
 }
 
-/* En PC: hover para ratón */
-.clickable-index:hover {
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
-  background-color: #005fa3;
-  
+.clickable-index:hover, .clickable-index:focus {
+  background: white;
+  color: #fff;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(13, 110, 253, 0.18);
+  outline: none;
+}
+
+.clickable-index:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.10);
 }
 
 /* En móvil: efecto al pulsar */
 .clickable-index:active {
   transform: scale(0.95);
-  background-color: #005fa3; /* oscurecer un poco el fondo */
+  background-color: #007B8F; /* oscurecer un poco el fondo */
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.clickable-index:focus {
-  outline: none;
-  box-shadow: 0 0 8px #007B8F;
-  background-color: #006ea1;
-}
+
 /* ---------------------- */
 /*         LOGO           */
 /* ---------------------- */
