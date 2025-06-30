@@ -31,58 +31,12 @@
     </div>
     </div>
   </header>
-
-
-
-
-
 <section class="section">   
 <div style="text-align: center;">
     <a href="#form-contacto" class="download-button">Contactar</a>
 </div>
-
-
-
 </section>
-  <section class="section" style="max-width:900px;margin:2rem auto;">
-    <h2 class="highlight" style="text-align:center;">📬 Contacto</h2>
-    <div class="highlight-box" style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:stretch;">
-      <!-- Datos de contacto directo -->
-      <div style="flex:1 1 260px;min-width:260px;max-width:340px;display:flex;flex-direction:column;justify-content:center;">
-        <h3 style="text-align:center;">¿Hablamos?</h3>
-        <p style="text-align:center;">
-          <a href="https://wa.me/34621393873" target="_blank" class="clickable whatsapp-link" style="font-size:1.2rem;">
-            <i class="fab fa-whatsapp"></i> WhatsApp: 621 393 873
-          </a>
-        </p>
-        <p style="text-align:center;">
-          <a href="mailto:supclubzgz@gmail.com" class="clickable" style="font-size:1.1rem;">
-            <i class="fas fa-envelope"></i> supclubzgz@gmail.com
-          </a>
-        </p>
-        <p style="text-align:center;">
-          <i class="fas fa-map-marker-alt"></i> Parque del Agua, Zaragoza
-        </p>
-      </div>
-      <!-- Formulario de contacto -->
-      <div style="flex:1 1 320px;min-width:260px;max-width:400px;">
-        <form class="contact-form" style="background:#fff;padding:1.5rem 1rem;border-radius:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="download-button" style="width:100%;">Enviar</button>
-        </form>
-      </div>
-    </div>
+
     <!-- Mapa o ubicación -->
     <div style="margin:2.5rem auto 0 auto;max-width:600px;">
       <h3 style="text-align:center;">¿Dónde estamos?</h3>
@@ -93,8 +47,41 @@
     <div style="text-align:center; margin-top:2rem;">
       <a href="index.html" class="btn-volver">← Volver al inicio</a>
     </div>
-  </section>
-
+<section class="section">
+<div id="form-contacto" class="highlight-box">
+  <h2 style="text-align:center; color:#007B8F; margin-bottom:1.2rem;">¿NECESITAS AYUDA?</h2>
+  <h3>¿No sabes cuántas clases elegir? ¿Quieres organizar alguna actividad? ¿Quieres preguntarnos algo?...Ponte en contacto con nosotros y te responderemos lo antes posible.</h3>
+  <form class="contact-form" autocomplete="off">
+    <div class="form-group">
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre*">
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+    </div>
+    <div class="form-group">
+      <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{9,}" placeholder="Tu teléfono">
+    </div>
+    <div class="form-group">
+      <select id="motivo" name="motivo" required>
+        <option value="">Motivo de contacto</option>
+        <option value="informacion">Solicitar información</option>
+        <option value="reserva">Reservar actividad</option>
+        <option value="colaboracion">Colaboración</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="mensaje">Mensaje*</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+    </div>
+    <div class="form-group" style="margin-bottom:0.5rem;">
+      <input type="checkbox" id="politica" name="politica" required>
+      <label for="politica" style="display:inline;">He leído y acepto la <a href="politica.html" target="_blank">política de privacidad</a>*</label>
+    </div>
+    <button type="submit" class="download-button" style="display:flex">Enviar</button>
+  </form>
+</div>
+</section>
   <footer>
     <p>&copy; 2025 SUP Club Zaragoza</p>
     <p>
