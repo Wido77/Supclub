@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto · SUP Club Zaragoza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header header-foto">
+    <nav class="main-nav">
+     <div class="logo">
+      <a href="index.html">
+       <img src="assets/logo.jpg" alt="Logo SUP Club">
+     </a>
+     <span>SUP Club</span>
+     </div>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="calendario2.html">🗓️Calendario</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <section class="section" style="max-width:900px;margin:2rem auto;">
+    <h2 class="highlight" style="text-align:center;">📬 Contacto</h2>
+    <div class="highlight-box" style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:stretch;">
+      <!-- Datos de contacto directo -->
+      <div style="flex:1 1 260px;min-width:260px;max-width:340px;display:flex;flex-direction:column;justify-content:center;">
+        <h3 style="text-align:center;">¿Hablamos?</h3>
+        <p style="text-align:center;">
+          <a href="https://wa.me/34621393873" target="_blank" class="clickable whatsapp-link" style="font-size:1.2rem;">
+            <i class="fab fa-whatsapp"></i> WhatsApp: 621 393 873
+          </a>
+        </p>
+        <p style="text-align:center;">
+          <a href="mailto:supclubzgz@gmail.com" class="clickable" style="font-size:1.1rem;">
+            <i class="fas fa-envelope"></i> supclubzgz@gmail.com
+          </a>
+        </p>
+        <p style="text-align:center;">
+          <i class="fas fa-map-marker-alt"></i> Parque del Agua, Zaragoza
+        </p>
+      </div>
+      <!-- Formulario de contacto -->
+      <div style="flex:1 1 320px;min-width:260px;max-width:400px;">
+        <form class="contact-form" style="background:#fff;padding:1.5rem 1rem;border-radius:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="download-button" style="width:100%;">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <!-- Mapa o ubicación -->
+    <div style="margin:2.5rem auto 0 auto;max-width:600px;">
+      <h3 style="text-align:center;">¿Dónde estamos?</h3>
+      <div style="border-radius:1rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+        <iframe src="https://www.google.com/maps?q=Parque+del+Agua+Zaragoza&output=embed" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SUP Club Zaragoza</p>
+    <p>
+      · Whatsapp: <a href="https://wa.me/34621393873" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      · Instagram: <a href="https://instagram.com/supclubzgz" target="_blank"><i class="fab fa-instagram"></i></a>
+      · Facebook: <a href="https://facebook.com/supclubzgz" target="_blank"><i class="fab fa-facebook"></i></a>
+    </p>
+  </footer>
+</body>
+</html>
