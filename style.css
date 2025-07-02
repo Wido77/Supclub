@@ -626,6 +626,18 @@ footer a {
   margin-right: 0.5em;
 }
 
+@media (max-width: 700px) {
+  .enlace-lateral {
+    top: unset;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
 /* ---------------------- */
 /*       ANIMACIONES      */
 /* ---------------------- */
