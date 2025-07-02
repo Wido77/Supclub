@@ -158,6 +158,7 @@ header p {
 /*       TABLAS TARIFAS   */
 /* ---------------------- */
 
+
 .tarifas-table {
   width: 100%;
   border-collapse: collapse;
@@ -427,6 +428,14 @@ footer a {
 /* ---------------------- */
 /*      TARJETAS CLASES   */
 /* ---------------------- */
+.tarifas-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2.5rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
 
 .tarifas-cards {
   display: grid;
@@ -441,6 +450,29 @@ footer a {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+.bonos-incluyen {
+  background: #ecfeff;
+  border-left: 4px solid #007B8F;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.bonos-incluyen h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #007B8F;
+  margin-bottom: 0.5rem;
+}
+
+.bonos-incluyen ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  color: #374151;
+  margin: 0;
+  padding: 0;
 }
 
 /* ---------------------- */
