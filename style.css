@@ -604,6 +604,27 @@ footer a {
   font-size: 1.3em;
   vertical-align: middle;
 }
+.enlace-lateral {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  background: #0077b6;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+.enlace-lateral:hover {
+  background: #00cba9;
+  color: #fff;
+}
+.enlace-lateral i {
+  margin-right: 0.5em;
+}
 
 /* ---------------------- */
 /*       ANIMACIONES      */
