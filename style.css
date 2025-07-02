@@ -620,4 +620,16 @@ footer a {
   }
 }
 
+/* ---------------------- */
+/*  FORMULARIO CONTACTO   */
+/* ---------------------- */
 
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 0;
+}
