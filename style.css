@@ -436,6 +436,7 @@ footer a {
   margin: 2rem auto;
   max-width: 100%;
   width: 100%;
+  box-sizing: border-box;
   /* Quitar esto que he puesto para el movil 
   width: 100%;
   max-width: 800px;*/
@@ -458,6 +459,14 @@ footer a {
 @media (max-width: 768px) {
   .tarifas-cards {
     grid-template-columns: repeat(2, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tarifas-cards {
+    grid-template-columns: repeat(1, 1fr);
     padding-left: 1rem;
     padding-right: 1rem;
   }
