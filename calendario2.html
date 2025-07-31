@@ -13,172 +13,34 @@
 <body>
     <!-- Cabecera con video de fondo y logo -->
     <header class="header">
+    <nav class="main-nav">
+     <div class="logo">
+      <a href="index.html">
+       <img src="assets/logo.jpg" alt="Logo SUP Club">
+     </a>
+     <span>SUP Club</span>
+     </div>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="calendario2.html">🗓️Calendario</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="assets/video.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
 
-        <!-- Video de fondo autoreproducible -->
-        <video autoplay muted loop playsinline class="background-video">
-            <source src="assets/video.mp4" type="video/mp4">
-            Tu navegador no soporta el video.
-        </video>
-        <!-- Logo y nombre del club -->
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/logo.jpg" alt="Logo SUP Club" />
-            </a>
-            <span>SUP Club</span>
-        </div>
-        <!-- Título principal y descripción -->
-        <div>
-            <h1>SUP Club Zaragoza</h1>
-            <p>Clases y aventuras de Paddle Surf para todos los niveles</p>
-        </div>
-    </header>
+      <div>
+      <h1>SUP Club Zaragoza</h1>
+      <p>Clases y aventuras de Paddle Surf para todos los niveles</p>
+    </div>
+  </header>
     <!-- Calendly inline widget -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
 <div class="calendly-inline-widget" data-url="https://calendly.com/palosurfoficial" style="min-width:320px;height:630px;"></div>
-
-<!-- Sección principal del calendario -->
-<section class="section">
-    <h2>Calendario de Clases 2025</h2>
-    <!-- Botón para volver a la página anterior -->
-    <button onclick="history.back()" class="btn-volver">← Volver</button>
-    <p>
-        Aquí encontrarás un calendario con los días y horarios disponibles para tus clases de Paddle Surf. 
-        Si tienes alguna duda, no dudes en <a href="index.html#contacto">contactarnos</a>.
-    </p>
-
-    <div class="calendar-legend">
-    <div class="legend-item">
-        <span class="legend-color available"></span>
-        <span>Clases disponibles</span>
-    </div>
-    <div class="legend-item">
-        <span class="legend-color unavailable"></span>
-        <span>No hay clases</span>
-    </div>
-</div>
-
-
-        <!-- Contenedor donde se generará el calendario dinámicamente -->
-    <div id="calendar-container">
-
-        <script>
-             // Cargamos los datos guardados en localStorage
-            function loadScheduleData() {
-            const savedData = localStorage.getItem('scheduleData');
-            if (savedData) {
-                return JSON.parse(savedData);
-            } else {
-                return {
-                    specialClasses: [],
-                    blockedPeriods: []
-                };
-            }
-        }
-            // Convierte YYYY-MM-DD a Date (sin hora)
-            function parseDate(dateStr) {
-            const parts = dateStr.split('-');
-            return new Date(parts[0], parts[1] - 1, parts[2]);
-        }
-
-            // Configuración inicial del calendario
-            const year = 2025;
-            const startMonth = 5; // Junio (enero = 0)
-            const numMonths = 6; // Mostrar 6 meses
-
-            //Dias con clases disponibles
-            const classSchedule = {
-                2:true,
-                4:true            };
-
-            // Array con nombres de los meses en español
-            const monthNames = [
-                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-            ];
-
-            // Obtener el contenedor del calendario
-            const container = document.getElementById("calendar-container");
-            // Cargar los datos del calendario desde localStorage
-            const scheduleData = loadScheduleData();
-
-            // Bucle para generar los calendarios de cada mes
-            for (let m = 0; m < numMonths; m++) {
-                // Cálculo del mes y año actuales
-                const currentMonth = (startMonth + m) % 12;
-                const currentYear = year + Math.floor((startMonth + m) / 12);
-
-                // Crear y configurar el contenedor del mes
-                const monthDiv = document.createElement("div");
-                monthDiv.classList.add("calendar");
-
-                // Crear el encabezado del mes
-                const header = document.createElement("div");
-                header.classList.add("calendar-header");
-                header.textContent = `${monthNames[currentMonth]} ${currentYear}`;
-                monthDiv.appendChild(header);
-
-                // Crear los días de la semana
-                const daysOfWeek = document.createElement("div");
-                daysOfWeek.classList.add("calendar-days");
-                daysOfWeek.innerHTML = `
-                    <div>L</div><div>M</div><div>X</div>
-                    <div>J</div><div>V</div><div>S</div><div>D</div>
-                `;
-                monthDiv.appendChild(daysOfWeek);
-
-                // Crear la cuadrícula de días
-                const datesGrid = document.createElement("div");
-                datesGrid.classList.add("calendar-dates");
-
-                // Calcular el primer día del mes
-                const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-                // Calcular el número total de días en el mes
-                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-
-                // Ajustar las celdas vacías para el primer día
-                let emptyCells = firstDay === 0 ? 6 : firstDay - 1;
-
-                // Añadir celdas vacías
-                for (let i = 0; i < emptyCells; i++) {
-                    datesGrid.appendChild(document.createElement("div"));
-                }
-
-                // Añadir los días del mes
-                for (let day = 1; day <= daysInMonth; day++) {
-                    const dayDiv = document.createElement("div");
-                    dayDiv.textContent = day;
-
-                    const date = new Date(currentYear, currentMonth, day);
-
-                    
-                    // Marcar días con clases
-                    if (classSchedule[date.getDay()]) {
-                    dayDiv.classList.add('available');
-                        } else {
-                            dayDiv.classList.add('unavailable');}
-                    datesGrid.appendChild(dayDiv);
-
-                    
-                }
-
-                // Añadir la cuadrícula al contenedor del mes
-                monthDiv.appendChild(datesGrid);
-                container.appendChild(monthDiv);
-                }
-            </script>
-            </section>
-
-            <!-- Sección de botón de WhatsApp para reservas -->
-            <section class="section">
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="https://wa.me/34621393873" class="boton-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Reserva tu plaza
-                    </a>
-                </div>
-            </section>
-
 
   <div class="social-icons-vertical">
     <a class="whatsapp" href="https://wa.me/34621393873" target="_blank"><i class="fab fa-whatsapp"></i></a>
