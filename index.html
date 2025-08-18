@@ -4,7 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SUP Club Zaragoza</title>
+    <!--Script de overtracking-->
   <script defer src="https://cdn.overtracking.com/t/tr2Fn0NfEJUUBjN0g/"></script>
+  <!--Script de google analytics-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XZPL4XH2"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3XZPL4XH2');
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -96,6 +106,151 @@
         </div>
     </div>
   </section>
+
+      <!-- Banner de cookies -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <div class="cookie-banner-title">
+                    <span class="cookie-icon">🍪</span>
+                    Usamos cookies
+                </div>
+                <p class="cookie-banner-description">
+                    Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación y ofrecerte contenido personalizado. 
+                    <a href="politica-cookies.html" target="_blank">Más información sobre cookies</a>
+                </p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">
+                    Rechazar
+                </button>
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
+                    ✓ Aceptar todo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuración del banner de cookies
+        const COOKIE_CONSENT_KEY = 'cookie_consent';
+        const COOKIE_BANNER_ID = 'cookieBanner';
+
+        // Función para mostrar el banner
+        function showCookieBanner() {
+            const banner = document.getElementById(COOKIE_BANNER_ID);
+            if (banner) {
+                banner.classList.add('show');
+                // Pequeño delay para la animación
+                setTimeout(() => {
+                    banner.style.animation = 'slideUp 0.4s ease-out';
+                }, 100);
+            }
+        }
+
+        // Función para ocultar el banner
+        function hideCookieBanner() {
+            const banner = document.getElementById(COOKIE_BANNER_ID);
+            if (banner) {
+                banner.classList.remove('show');
+            }
+        }
+
+        // Función para guardar la decisión del usuario
+        function saveCookieConsent(consent) {
+            try {
+                const consentData = {
+                    consent: consent,
+                    timestamp: new Date().toISOString(),
+                    version: '1.0'
+                };
+                localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consentData));
+                console.log('Consentimiento guardado:', consent);
+            } catch (error) {
+                console.error('Error al guardar el consentimiento:', error);
+                // Fallback con cookies si localStorage no está disponible
+                document.cookie = `${COOKIE_CONSENT_KEY}=${consent}; max-age=31536000; path=/; SameSite=Lax`;
+            }
+        }
+
+        // Función para obtener el consentimiento guardado
+        function getCookieConsent() {
+            try {
+                const saved = localStorage.getItem(COOKIE_CONSENT_KEY);
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    return data.consent;
+                }
+            } catch (error) {
+                console.error('Error al obtener el consentimiento:', error);
+                // Fallback con cookies
+                const cookies = document.cookie.split(';');
+                for (let cookie of cookies) {
+                    const [name, value] = cookie.trim().split('=');
+                    if (name === COOKIE_CONSENT_KEY) {
+                        return value;
+                    }
+                }
+            }
+            return null;
+        }
+
+        // Función cuando el usuario acepta todas las cookies
+        function acceptCookies() {
+            saveCookieConsent('accepted');
+            hideCookieBanner();
+            
+        }
+
+        // Función cuando el usuario rechaza las cookies
+        function rejectCookies() {
+            saveCookieConsent('rejected');
+            hideCookieBanner();
+          
+        }
+
+
+        // Función para cargar scripts de análisis (ejemplo)
+        function loadAnalytics() {
+            // Ejemplo: Google Analytics
+            /*
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'TU_TRACKING_ID', 'auto');
+            ga('send', 'pageview');
+            */
+        }
+
+        // Inicialización cuando se carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = getCookieConsent();
+            
+            if (consent === null) {
+                // Primera visita - mostrar banner después de un pequeño delay
+                setTimeout(showCookieBanner, 1000);
+            } else if (consent === 'accepted') {
+                // Usuario ya aceptó - cargar scripts
+                console.log('Usuario ya aceptó cookies previamente');
+                // loadAnalytics();
+            } else if (consent === 'rejected') {
+                // Usuario rechazó - solo cookies esenciales
+                console.log('Usuario rechazó cookies previamente');
+            }
+        });
+
+        // Función para resetear el consentimiento (útil para desarrollo/testing)
+        function resetCookieConsent() {
+            try {
+                localStorage.removeItem(COOKIE_CONSENT_KEY);
+            } catch (error) {
+                document.cookie = `${COOKIE_CONSENT_KEY}=; max-age=-1; path=/`;
+            }
+            location.reload();
+        }
+    </script>
 
 
 

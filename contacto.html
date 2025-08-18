@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto · SUP Club Zaragoza</title>
+    <!--Script de overtracking-->
+  <script defer src="https://cdn.overtracking.com/t/tr2Fn0NfEJUUBjN0g/"></script>
+  <!--Script de google analytics-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XZPL4XH2"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3XZPL4XH2');
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -33,14 +44,9 @@
       <p>Clases y aventuras de Paddle Surf para todos los niveles</p>
     </div>
   </header>
-<section class="section">   
-<div style="text-align: center;">
-    <a href="#form-contacto" class="download-button">Contactar</a>
-</div>
-</section>
 
-    <!-- Mapa o ubicación -->
-    <div style="margin:2.5rem auto 0 auto;max-width:600px;">
+    <!-- Mapa-->
+    <div style="margin:2.5rem auto 0 auto;max-width:1000px;">
       <h3 style="text-align:center;">¿Dónde estamos?</h3>
       <div style="border-radius:1rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
         <iframe src="https://www.google.com/maps?q=Parque+del+Agua+Zaragoza&output=embed" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -50,7 +56,7 @@
 <div id="form-contacto" class="highlight-box">
   <h2 style="text-align:center; color:#007B8F; margin-bottom:1.2rem;">¿NECESITAS AYUDA?</h2>
   <h3>¿No sabes cuántas clases elegir? ¿Quieres organizar alguna actividad? ¿Quieres preguntarnos algo?...Ponte en contacto con nosotros y te responderemos lo antes posible.</h3>
-  <form class="contact-form" autocomplete="off">
+  <form class="contact-form" autocomplete="off" action="https://formsubmit.co/info@supclub.es" method="POST"> 
     <div class="form-group">
       <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre*">
     </div>
