@@ -494,7 +494,9 @@ footer a {
 
 @media (max-width: 768px) {
   .tarifas-box{
-    padding: 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .tarifas-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -505,7 +507,9 @@ footer a {
 
 @media (max-width: 600px) {
   .tarifas-box{
-    padding: 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .tarifas-cards {
     grid-template-columns: repeat(1, 1fr);
