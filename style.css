@@ -493,19 +493,41 @@ footer a {
 }
 
 @media (max-width: 768px) {
+  .tarifas-box{
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .tarifas-cards {
     grid-template-columns: repeat(2, 1fr);
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  .tarifas-cards-3 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
 }
 
 @media (max-width: 600px) {
+  .tarifas-box{
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .tarifas-cards {
     grid-template-columns: repeat(1, 1fr);
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  .tarifas-cards-3 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
 }
 
 .bonos-incluyen {
@@ -1075,3 +1097,26 @@ footer a {
                 width: 100%;
             }
         }
+
+/* ---------------------- */
+/*       TERMINOS         */
+/* ---------------------- */
+.aviso-condiciones {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+.aviso-condiciones h3 {
+  color: #d35400;
+  margin-bottom: 1rem;
+}
+.aviso-condiciones ul {
+  padding-left: 1.2rem;
+}
+.aviso-condiciones li {
+  margin-bottom: 1rem;
+}
